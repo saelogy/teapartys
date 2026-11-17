@@ -319,6 +319,97 @@ body{
 .guestbook-entry p{margin:3px 0;font:12px/1.45 Georgia,serif;color:#98777a;white-space:pre-wrap}
 .guestbook-empty{padding:8px;text-align:center;color:#b99a9b;font:italic 11px Georgia,serif}
 
+
+/* === RibbonDoll-inspired finishing layer === */
+:root{
+  --ribbon-blush:#f7d8e1;
+  --ribbon-rose:#d99aaa;
+  --ribbon-cream:#fffaf6;
+  --ribbon-ink:#98777a;
+}
+body{
+  background-color:#fff3f6;
+  background-image:
+    radial-gradient(rgba(220,166,181,.16) .8px,transparent .9px),
+    radial-gradient(rgba(255,255,255,.9) .8px,transparent .9px);
+  background-size:6px 6px,12px 12px;
+}
+.topbar{border-color:#e6c4cf}
+.brand{gap:8px}
+.ribbon-divider{
+  height:17px;
+  margin:2px 0 9px;
+  background:url("https://ribbondoll.neocities.org/index/pearldiv.png") left center/repeat-x;
+  opacity:.82;
+}
+.ribbon-panel{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) 104px;
+  gap:9px;
+  align-items:center;
+}
+.ribbon-panel img{
+  display:block;
+  width:100%;
+  max-height:120px;
+  object-fit:contain;
+  mix-blend-mode:multiply;
+}
+.ribbon-caption{
+  margin:0;
+  color:#b18b8c;
+  font:italic 11px Georgia,serif;
+  text-align:center;
+}
+.update-list,.todo-list{list-style:none;padding:0;margin:0}
+.update-list li,.todo-list li{
+  padding:5px 2px;
+  border-bottom:1px dotted #ead1d9;
+  font-size:11px;
+}
+.update-list li:last-child,.todo-list li:last-child{border-bottom:0}
+.update-list time{
+  display:block;
+  margin-bottom:2px;
+  color:#c397a2;
+  font:9px Georgia,serif;
+  letter-spacing:.5px;
+}
+.todo-list li:before{content:"♡ ";color:#df9db2}
+.melody-feature{
+  text-align:center;
+  padding:7px;
+  background:linear-gradient(135deg,#fff8fa,#fff1f5);
+  border:1px dashed #e5bdca;
+}
+.melody-feature img{
+  display:block;
+  width:min(100%,155px);
+  max-height:145px;
+  object-fit:contain;
+  margin:0 auto 5px;
+  mix-blend-mode:multiply;
+}
+.melody-feature p{margin:3px 0;color:#a98280;font:italic 10px Georgia,serif}
+.box-title:before{content:"୨୧ ";color:#d99aaa}
+.nav a{position:relative}
+.nav a:after{
+  content:"";
+  display:block;
+  height:4px;
+  margin-top:4px;
+  background:linear-gradient(90deg,transparent,#f2d5df,transparent);
+}
+.footer{letter-spacing:1px}
+@media(max-width:800px){
+  .ribbon-panel{grid-template-columns:minmax(0,1fr) 82px}
+  .ribbon-panel img{max-height:100px}
+}
+@media(max-width:420px){
+  .ribbon-panel{grid-template-columns:1fr}
+  .ribbon-panel img{width:110px;max-height:100px}
+}
+
 </style>
 </head>
 <body>
@@ -326,6 +417,7 @@ body{
 <div class="desktop">
   <div class="sticker">♡ personal webspace ♡</div>
   <header class="topbar"><span>✿ SWEET OS // VERSION 2004.08 ✿</span><span class="brand"><img class="teacup-mark" src="https://itinerae.neocities.org/img/teacup1.png" alt=""> sugarplum desktop</span><span class="sysinfo">ONLINE ● 00:00</span></header>
+  <div class="ribbon-divider" aria-hidden="true"></div>
   <nav class="nav" aria-label="Site navigation">
     <a href="#home">⌂ HOME</a><a href="#diary">DIARY</a><a href="#collections">COLLECTIONS</a><a href="#music">JUKEBOX</a><a href="#calendar">CALENDAR</a><a href="#links">LINKS</a>
   </nav>
@@ -335,10 +427,25 @@ body{
       <section class="box"><h2 class="box-title"><img src="https://itinerae.neocities.org/pixels/tiny/dot.gif" alt=""> quick access</h2><ul class="links"><li><a href="#home">welcome screen</a></li><li><a href="#diary">tiny journal</a></li><li><a href="#collections">treasure shelf</a></li><li><a href="#music">music player</a></li><li><a href="#links">favourite places</a></li></ul></section>
       <section class="box"><h2 class="box-title"><img src="https://itinerae.neocities.org/pixels/tiny/dessert.gif" alt=""> currently</h2><p>♡ sipping: strawberry milk with too much ice</p><p>♡ mood: soft, sleepy & a little curious</p><p>♡ doing: rearranging tiny treasures</p><p>♡ reading: a book with folded corners</p><p>♡ listening: songs that sound like summer</p><p>♡ weather: cotton-candy skies, probably</p></section>
       <section class="box"><h2 class="box-title"><img src="https://itinerae.neocities.org/pixels/tiny/feather.gif" alt=""> little reminder</h2><div class="note">Be gentle with yourself. Even the smallest things can be lovely. Take your time, leave room for silly little joys, and remember that you do not have to bloom all at once.</div></section>
+      <section class="box"><h2 class="box-title">little update log</h2>
+        <ul class="update-list">
+          <li><time>♡ LATEST NOTE</time>the desktop got a little ribbon makeover!</li>
+          <li><time>♡ RECENTLY</time>added a few new treasures to the shelf</li>
+          <li><time>♡ COMING SOON</time>more diary postcards & tiny details</li>
+        </ul>
+      </section>
+      <section class="box"><h2 class="box-title">things to do</h2>
+        <ul class="todo-list">
+          <li>decorate the treasure shelf</li>
+          <li>write a new postcard</li>
+          <li>find more cute pixels</li>
+        </ul>
+      </section>
       <section class="box"><h2 class="box-title"><img src="https://itinerae.neocities.org/pixels/tiny/heart.gif" alt=""> visitor counter</h2><div class="counter">YOU ARE VISITOR<strong>000284</strong>THANK YOU FOR STOPPING BY!</div></section>
     </aside>
     <main class="column middle" id="home">
       <section class="hero"><img class="teaparty-corner" src="https://itinerae.neocities.org/img/lightac.png" alt=""><div class="hero-inner"><h1>Welcome to my little world</h1><p>୨୧ a tiny universe made of pixels, petals & daydreams ୨୧</p></div></section>
+      <div class="ribbon-divider" aria-hidden="true"></div>
       <section class="box"><h2 class="box-title"><img src="https://itinerae.neocities.org/pixels/tiny/drink.gif" alt=""> hello, hello!</h2><p class="welcome">A small and cosy place on the internet for all the things that make life feel a little more magical. Wander around, open a few drawers, and stay as long as you like. This is a scrapbook for passing thoughts, favourite colours, half-remembered dreams and all the little details that are easy to overlook.</p><p class="welcome">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae justo sed neque consequat blandit. Donec a sem at arcu commodo posuere. Curabitur quis mi sed erat tempor finibus; interdum et malesuada fames ac ante ipsum primis in faucibus.</p><div class="quote">“somewhere between a memory and a dream.”</div></section>
       <section class="box" id="diary"><h2 class="box-title"><img src="https://itinerae.neocities.org/pixels/tiny/memo.gif" alt=""> postcards from today</h2>
         <article class="entry"><div class="date">POSTCARD NO. 001 · 09:14 AM</div><h3>A slow little morning</h3><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. The curtains are glowing, the kettle is singing, and the morning is taking its own sweet time. A little quiet, a little light, and absolutely nowhere else to be.</p></article>
@@ -377,9 +484,16 @@ body{
       <section class="box" id="calendar"><h2 class="box-title"><img src="https://itinerae.neocities.org/pixels/tiny/icecream.gif" alt=""> date keeper</h2><div class="calendar"><div class="calendar-head"><button id="prev-month" type="button" aria-label="Previous month">◂</button><b id="month-label"></b><button id="next-month" type="button" aria-label="Next month">▸</button></div><div class="days" id="days"></div><div class="calendar-note" id="calendar-note">♡ choose a date to leave a little note ♡</div></div></section>
       <section class="box"><h2 class="box-title"><img src="https://itinerae.neocities.org/pixels/tiny/dotwhite.gif" alt=""> mini bulletin</h2><div class="entry"><div class="date">PINNED NOTE</div><p>Remember to drink some water, stretch your shoulders, and look out of the window for a moment.</p></div><div class="entry"><div class="date">SITE UPDATE</div><p>The little desktop has been tidied up. New treasures may appear soon!</p></div><div class="entry"><div class="date">A SMALL THOUGHT</div><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse potenti. A soft place to pause, breathe, and begin again.</p></div></section>
       <section class="box"><h2 class="box-title"><img src="https://itinerae.neocities.org/pixels/tiny/fang1.gif" alt=""> pixel garden</h2><div style="text-align:center;font-size:25px;line-height:1.7">✿ ❀ ✿<br>૮₍ ˶ᵔ ᵕ ᵔ˶ ₎ა<br>♡ ❀ ♡</div><div class="tiny" style="text-align:center">growing at its own pace</div><p class="tiny" style="text-align:center">Lorem ipsum dolor sit amet, florals, little stars & other small wonders.</p></section>
+      <section class="box"><h2 class="box-title">a little ribbon friend</h2>
+        <div class="melody-feature">
+          <img src="https://ribbondoll.neocities.org/index/mymelo.jpg" alt="Pastel My Melody illustration with a bow">
+          <p>bows, pearls & sweet little daydreams ♡</p>
+        </div>
+      </section>
       <section class="box"><h2 class="box-title"><img src="https://itinerae.neocities.org/pixels/tiny/heart.gif" alt=""> thank you!</h2><p class="tiny" style="text-align:center">Thanks for visiting this tiny corner of the internet. Come back whenever you need a little softness. ♡</p></section>
     </aside>
   </div>
+  <div class="ribbon-divider" aria-hidden="true"></div>
   <footer class="footer">✿ handmade with care · best viewed with a cup of something sweet · see you soon ♡ ✿</footer>
 </div>
 
@@ -468,7 +582,95 @@ guestForm.addEventListener("submit", async event => {
     }
     guestForm.reset();
     guestStatus.textContent = "Your note has been added for everyone to see. Thank you! ♡";
-    await loadGuestbook();
+    await 
+/* Tiny date keeper calendar */
+(function(){
+  const daysEl = document.getElementById("days");
+  const monthLabel = document.getElementById("month-label");
+  const noteEl = document.getElementById("calendar-note");
+  const prevBtn = document.getElementById("prev-month");
+  const nextBtn = document.getElementById("next-month");
+  if(!daysEl || !monthLabel || !noteEl || !prevBtn || !nextBtn) return;
+
+  const today = new Date();
+  let shownMonth = new Date(today.getFullYear(), today.getMonth(), 1);
+  let selectedDate = new Date(today.getFullYear(), today.getMonth(), today.getDate());
+  const weekdayNames = ["S","M","T","W","T","F","S"];
+
+  function sameDay(a,b){
+    return a.getFullYear()===b.getFullYear() &&
+      a.getMonth()===b.getMonth() && a.getDate()===b.getDate();
+  }
+
+  function renderCalendar(){
+    monthLabel.textContent = shownMonth.toLocaleDateString(undefined,{
+      month:"long", year:"numeric"
+    });
+    daysEl.replaceChildren();
+
+    weekdayNames.forEach(day=>{
+      const heading=document.createElement("span");
+      heading.textContent=day;
+      heading.setAttribute("aria-hidden","true");
+      heading.style.fontWeight="bold";
+      heading.style.background="#fff8fb";
+      daysEl.appendChild(heading);
+    });
+
+    const firstWeekday = new Date(shownMonth.getFullYear(),shownMonth.getMonth(),1).getDay();
+    const daysInMonth = new Date(shownMonth.getFullYear(),shownMonth.getMonth()+1,0).getDate();
+
+    for(let i=0;i<firstWeekday;i++){
+      const blank=document.createElement("span");
+      blank.className="blank";
+      blank.setAttribute("aria-hidden","true");
+      daysEl.appendChild(blank);
+    }
+
+    for(let day=1;day<=daysInMonth;day++){
+      const date=new Date(shownMonth.getFullYear(),shownMonth.getMonth(),day);
+      const cell=document.createElement("span");
+      cell.textContent=String(day);
+      cell.setAttribute("role","button");
+      cell.setAttribute("tabindex","0");
+      cell.setAttribute("aria-label",date.toLocaleDateString(undefined,{
+        weekday:"long",year:"numeric",month:"long",day:"numeric"
+      }));
+      if(sameDay(date,today)) cell.classList.add("today");
+      if(selectedDate && sameDay(date,selectedDate)) cell.classList.add("selected");
+
+      const chooseDate=()=>{
+        selectedDate=date;
+        noteEl.textContent="♡ "+date.toLocaleDateString(undefined,{
+          weekday:"long",month:"long",day:"numeric",year:"numeric"
+        })+" ♡";
+        renderCalendar();
+      };
+      cell.addEventListener("click",chooseDate);
+      cell.addEventListener("keydown",event=>{
+        if(event.key==="Enter" || event.key===" "){
+          event.preventDefault();
+          chooseDate();
+        }
+      });
+      daysEl.appendChild(cell);
+    }
+  }
+
+  prevBtn.addEventListener("click",()=>{
+    shownMonth=new Date(shownMonth.getFullYear(),shownMonth.getMonth()-1,1);
+    renderCalendar();
+  });
+  nextBtn.addEventListener("click",()=>{
+    shownMonth=new Date(shownMonth.getFullYear(),shownMonth.getMonth()+1,1);
+    renderCalendar();
+  });
+
+  noteEl.textContent="♡ choose a date to leave a little note ♡";
+  renderCalendar();
+})();
+
+loadGuestbook();
   }catch(error){
     guestStatus.textContent = error.message + " Please try again.";
   }finally{
