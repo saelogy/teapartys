@@ -87,51 +87,220 @@ button,input{font:inherit;color:inherit}
 @media(max-width:800px){body{padding:35px 9px}.desktop{padding:9px}.window{height:auto;grid-template-columns:1fr}.column{height:auto;max-height:none;overflow:visible}.column+.column{border-left:0;border-top:1px solid #e5cbd3}.middle{order:-1}.left,.right{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));align-items:start}.hero{min-height:125px}}
 @media(max-width:480px){.topbar{align-items:flex-start;flex-direction:column}.brand{font-size:19px}.left,.right{grid-template-columns:1fr}.nav a{min-width:calc(33.33% - 6px)}.desktop{border-width:6px}.gallery{gap:6px}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
+
+/* === blended TeaParty x Solveir x Elysium treatment === */
+:root{
+  --pink:#fff0f6;--pink2:#ffe3ed;--deep:#e8a6ba;--tan:#a97976;
+  --tan2:#c58f9c;--paper:#fffdfb;--line:#e8bdcc;--muted:#aa8c91;
+}
+body{
+  background-color:#fff0f6;
+  background-image:
+    radial-gradient(rgba(218,160,180,.16) .8px,transparent .9px),
+    radial-gradient(rgba(255,255,255,.95) .8px,transparent .9px);
+  background-size:5px 5px,9px 9px;
+  color:#9c777a;
+  font-family:"Crimson Text",Georgia,serif;
+  letter-spacing:.7px;
+}
+.desktop{
+  width:min(960px,100%);
+  border:9px solid transparent;
+  border-image:repeating-linear-gradient(45deg,#fff 0 5px,#f7d5e1 5px 9px,#fff 9px 14px) 9;
+  border-radius:0;
+  background:rgba(255,250,252,.97);
+  box-shadow:none;
+}
+.desktop:before{
+  inset:4px;border:1px dashed rgba(204,151,170,.55);border-radius:0;
+}
+.topbar{
+  border:1px solid #e8bdcc;
+  background:linear-gradient(#fff,#fff0f6);
+  color:#b88d91;
+}
+.brand{
+  display:flex;align-items:center;justify-content:center;gap:7px;
+  font-family:Georgia,serif;font-style:italic;
+  color:#df9db2;text-shadow:1px 1px #fff,2px 2px #f2d3dd;
+}
+.teacup-mark{width:37px;height:37px;object-fit:contain;opacity:.8;vertical-align:middle}
+.nav{
+  background:#fff8fb;border:1px dashed #e8bdcc;
+}
+.nav a{
+  border:1px solid #e8bdcc;background:#fff;
+  color:#a97976;font:italic 13px Georgia,serif;letter-spacing:.8px;
+}
+.nav a:hover{background:#ffeaf1;border-style:dashed}
+.window{
+  border:1px solid #e3bdc9;border-radius:0;
+  background:#fffdfd;box-shadow:inset 0 0 0 2px #fff;
+}
+.column{
+  background:rgba(255,251,252,.96);
+  scrollbar-color:#f0cbd8 #fff5f8;
+}
+.column+.column{border-left:1px solid #ead0d8}
+.column::-webkit-scrollbar-track{background:#fff5f8;border-left:1px solid #efd8df}
+.column::-webkit-scrollbar-thumb{background:#ffeaf1;border:1px solid #e5bac9}
+.box{
+  margin-top:15px;
+  padding:17px 11px 11px;
+  border:1px solid #e4bdca;
+  border-radius:0;
+  background:#fffdfb;
+  box-shadow:none;
+}
+.box:before{
+  content:"";position:absolute;inset:6px;
+  border:1px dashed rgba(202,151,169,.52);
+  pointer-events:none;
+}
+.box-title{
+  position:absolute;top:-12px;left:12px;z-index:2;
+  display:flex;align-items:center;gap:5px;
+  margin:0;padding:2px 9px 3px;
+  background:#fff8fb;border:1px solid #e4bdca;
+  color:#b88d91;font:10px Georgia,serif;
+  font-style:italic;letter-spacing:1.6px;
+  text-transform:uppercase;
+}
+.box-title img{
+  width:13px;height:13px;object-fit:contain;opacity:.8;
+}
+.hero{
+  position:relative;overflow:visible;
+  background:
+    radial-gradient(rgba(255,255,255,.9) 1px,transparent 1.6px),
+    linear-gradient(135deg,#ffe7ef,#fff7f4 55%,#f9e8ef);
+  background-size:12px 12px,auto;
+  border:1px solid #e5bdca;
+  min-height:135px;
+}
+.hero:after{
+  content:"";position:absolute;inset:5px;border:1px dashed rgba(202,151,169,.55);
+  pointer-events:none;
+}
+.hero-inner{
+  border:1px dashed #e6bdcb;border-radius:0;
+  background:rgba(255,253,251,.86);
+}
+.hero h1{
+  font-family:Georgia,serif;font-style:italic;
+  color:#e5a4b8;text-shadow:1px 1px #fff,2px 2px #f1d0db;
+}
+.hero p{color:#b18b8c}
+.teaparty-corner{
+  position:absolute;z-index:3;right:-15px;top:-20px;
+  width:72px;height:72px;object-fit:contain;
+  opacity:.72;transform:rotate(8deg);
+  filter:none;
+  animation:cornerFloat 4.5s ease-in-out infinite;
+}
+@keyframes cornerFloat{
+  0%,100%{transform:rotate(8deg) translateY(0)}
+  50%{transform:rotate(12deg) translateY(-5px)}
+}
+.avatar{
+  border:1px solid #e6bdca;border-radius:0;
+  background:radial-gradient(#fff 2px,transparent 2.8px),linear-gradient(135deg,#ffe3ed,#fff5f0);
+  background-size:12px 12px,auto;
+}
+.avatar img{max-width:100%;max-height:100%;object-fit:contain}
+.status{
+  border:1px dashed #e5bdca;background:#fff4f8;color:#b18b8c;
+}
+.status img{width:10px;height:10px;vertical-align:middle}
+.links li{border-bottom:1px dotted #ead1d9}
+.links a:before{color:#e6a6ba}
+.note{background:#fff5f4;border-left:2px solid #e7bdcb;color:#a98280}
+.entry{border-color:#e8c8d2;background:linear-gradient(90deg,#fff4f7,transparent),#fffdfb}
+.entry h3{color:#d99eb0}
+.date{color:#bd9299}
+.snap{
+  border:1px dashed #e4bdca;border-radius:0;
+  box-shadow:none;background:#fff;
+}
+.snap-art{
+  background:
+    radial-gradient(#fff 1px,transparent 1.6px),
+    linear-gradient(135deg,#ffe1eb,#fff5ec);
+  background-size:10px 10px,auto;
+}
+.snap small{color:#b88e82}
+.player{border:1px dashed #e4bdca;background:#fff4f8}
+.player-screen{border:1px solid #e4bdca;background:#fffdfb;color:#a97976}
+.disc{border:2px solid #e7bdcb;background:repeating-radial-gradient(circle,#fff 0 3px,#f9dce6 4px 6px)}
+.player-controls button{border:1px solid #e4bdca;background:linear-gradient(#fff,#ffedf4);color:#a97976}
+.calendar{color:#a97976}
+.calendar-head button{border:1px solid #e4bdca;background:#fff4f8;color:#a97976}
+.days span{border-color:#f0dce3}
+.days .today{background:#ffe0eb;border-color:#e3aabd}
+.footer{
+  border:1px solid #e4bdca;background:#fff7fa;color:#b18b8c;
+  box-shadow:none;border-radius:0;
+}
+.footer:before{border:1px dashed rgba(202,151,169,.5)}
+.sticker{
+  background:#ffe7ef;border:1px dashed #dfaabd;
+  color:#a97976;border-radius:0;
+}
+.top-lace,.bottom-lace{
+  height:22px;
+  background:radial-gradient(ellipse at 50% 0,#fff 0 7px,transparent 7.7px) 0 0/16px 21px repeat-x;
+  border-bottom:1px dashed #e6b8c8;
+}
+@media(max-width:800px){
+  .desktop{border-width:7px}
+  .teaparty-corner{right:0;top:-13px;width:56px;height:56px}
+}
+
 </style>
 </head>
 <body>
 <div class="top-lace"></div><div class="bottom-lace"></div>
 <div class="desktop">
   <div class="sticker">♡ personal webspace ♡</div>
-  <header class="topbar"><span>✿ SWEET OS // VERSION 2004.08 ✿</span><span class="brand">sugarplum desktop</span><span class="sysinfo">ONLINE ● 00:00</span></header>
+  <header class="topbar"><span>✿ SWEET OS // VERSION 2004.08 ✿</span><span class="brand"><img class="teacup-mark" src="https://itinerae.neocities.org/img/teacup1.png" alt=""> sugarplum desktop</span><span class="sysinfo">ONLINE ● 00:00</span></header>
   <nav class="nav" aria-label="Site navigation">
     <a href="#home">⌂ HOME</a><a href="#diary">DIARY</a><a href="#collections">COLLECTIONS</a><a href="#music">JUKEBOX</a><a href="#calendar">CALENDAR</a><a href="#links">LINKS</a>
   </nav>
   <div class="window">
     <aside class="column left">
-      <section class="box"><h2 class="box-title">desktop buddy</h2><div class="profile"><div class="avatar">૮₍ ˶ᵔ ᵕ ᵔ˶ ₎ა</div><div><b>little visitor!</b><div class="tiny">you found my corner of the web.</div></div></div><div class="status">STATUS: <b>daydreaming</b> ♡</div></section>
-      <section class="box"><h2 class="box-title">quick access</h2><ul class="links"><li><a href="#home">welcome screen</a></li><li><a href="#diary">tiny journal</a></li><li><a href="#collections">treasure shelf</a></li><li><a href="#music">music player</a></li><li><a href="#links">favourite places</a></li></ul></section>
-      <section class="box"><h2 class="box-title">currently</h2><p>♡ sipping: strawberry milk</p><p>♡ mood: soft & sleepy</p><p>♡ doing: collecting moments</p><p>♡ weather: cotton-candy skies</p></section>
-      <section class="box"><h2 class="box-title">little reminder</h2><div class="note">Be gentle with yourself. Even the smallest things can be lovely.</div></section>
-      <section class="box"><h2 class="box-title">visitor counter</h2><div class="counter">YOU ARE VISITOR<strong>000284</strong>THANK YOU FOR STOPPING BY!</div></section>
+      <section class="box"><h2 class="box-title"><img src="https://itinerae.neocities.org/pixels/tiny/coffee.gif" alt=""> desktop buddy</h2><div class="profile"><div class="avatar"><img src="https://itinerae.neocities.org/pixels/tiny/bunny.gif" alt=""> </div><div><b>little visitor!</b><div class="tiny">you found my corner of the web.</div></div></div><div class="status"><img src="https://itinerae.neocities.org/pixels/tiny/dot.gif" alt=""> STATUS: <b>daydreaming</b> ♡</div></section>
+      <section class="box"><h2 class="box-title"><img src="https://itinerae.neocities.org/pixels/tiny/dot.gif" alt=""> quick access</h2><ul class="links"><li><a href="#home">welcome screen</a></li><li><a href="#diary">tiny journal</a></li><li><a href="#collections">treasure shelf</a></li><li><a href="#music">music player</a></li><li><a href="#links">favourite places</a></li></ul></section>
+      <section class="box"><h2 class="box-title"><img src="https://itinerae.neocities.org/pixels/tiny/dessert.gif" alt=""> currently</h2><p>♡ sipping: strawberry milk</p><p>♡ mood: soft & sleepy</p><p>♡ doing: collecting moments</p><p>♡ weather: cotton-candy skies</p></section>
+      <section class="box"><h2 class="box-title"><img src="https://itinerae.neocities.org/pixels/tiny/feather.gif" alt=""> little reminder</h2><div class="note">Be gentle with yourself. Even the smallest things can be lovely.</div></section>
+      <section class="box"><h2 class="box-title"><img src="https://itinerae.neocities.org/pixels/tiny/heart.gif" alt=""> visitor counter</h2><div class="counter">YOU ARE VISITOR<strong>000284</strong>THANK YOU FOR STOPPING BY!</div></section>
     </aside>
     <main class="column middle" id="home">
-      <section class="hero"><div class="hero-inner"><h1>Welcome to my little world</h1><p>୨୧ a tiny universe made of pixels, petals & daydreams ୨୧</p></div></section>
-      <section class="box"><h2 class="box-title">hello, hello!</h2><p class="welcome">A small and cosy place on the internet for all the things that make life feel a little more magical. Wander around, open a few drawers, and stay as long as you like.</p><div class="quote">“somewhere between a memory and a dream.”</div></section>
-      <section class="box" id="diary"><h2 class="box-title">postcards from today</h2>
+      <section class="hero"><img class="teaparty-corner" src="https://itinerae.neocities.org/img/lightac.png" alt=""><div class="hero-inner"><h1>Welcome to my little world</h1><p>୨୧ a tiny universe made of pixels, petals & daydreams ୨୧</p></div></section>
+      <section class="box"><h2 class="box-title"><img src="https://itinerae.neocities.org/pixels/tiny/drink.gif" alt=""> hello, hello!</h2><p class="welcome">A small and cosy place on the internet for all the things that make life feel a little more magical. Wander around, open a few drawers, and stay as long as you like.</p><div class="quote">“somewhere between a memory and a dream.”</div></section>
+      <section class="box" id="diary"><h2 class="box-title"><img src="https://itinerae.neocities.org/pixels/tiny/memo.gif" alt=""> postcards from today</h2>
         <article class="entry"><div class="date">POSTCARD NO. 001 · 09:14 AM</div><h3>A slow little morning</h3><p>The curtains are glowing, the kettle is singing, and there is nowhere in particular I need to be. A perfect sort of morning.</p></article>
         <article class="entry"><div class="date">POSTCARD NO. 002 · 04:32 PM</div><h3>Found treasures</h3><p>A tiny flower, a forgotten song, a note tucked inside a book. Ordinary things with a little sparkle hiding in them.</p></article>
         <article class="entry"><div class="date">POSTCARD NO. 003 · 11:06 PM</div><h3>Before the day ends</h3><p>Saving this moment here so I can come back to it whenever I need a reminder that today had good things in it.</p></article>
       </section>
-      <section class="box" id="collections"><h2 class="box-title">the tiny treasure shelf</h2><div class="gallery">
+      <section class="box" id="collections"><h2 class="box-title"><img src="https://itinerae.neocities.org/pixels/tiny/yum.gif" alt=""> the tiny treasure shelf</h2><div class="gallery">
         <div class="snap"><div class="snap-art">୨୧</div><small>ribbons & bows</small></div>
         <div class="snap"><div class="snap-art">✿</div><small>pressed petals</small></div>
         <div class="snap"><div class="snap-art">☁</div><small>cloud watching</small></div>
         <div class="snap"><div class="snap-art">♡</div><small>paper keepsakes</small></div>
       </div></section>
-      <section class="box" id="links"><h2 class="box-title">little places to visit</h2><ul class="links"><li><a href="https://neocities.org/" target="_blank" rel="noopener">Neocities — make a little website</a></li><li><a href="https://www.are.na/" target="_blank" rel="noopener">Are.na — collect visual inspiration</a></li><li><a href="https://archive.org/" target="_blank" rel="noopener">Internet Archive — wander through time</a></li></ul></section>
+      <section class="box" id="links"><h2 class="box-title"><img src="https://itinerae.neocities.org/pixels/tiny/dot.gif" alt=""> little places to visit</h2><ul class="links"><li><a href="https://neocities.org/" target="_blank" rel="noopener">Neocities — make a little website</a></li><li><a href="https://www.are.na/" target="_blank" rel="noopener">Are.na — collect visual inspiration</a></li><li><a href="https://archive.org/" target="_blank" rel="noopener">Internet Archive — wander through time</a></li></ul></section>
     </main>
     <aside class="column right">
-      <section class="box"><h2 class="box-title">now playing</h2><div class="player">
+      <section class="box"><h2 class="box-title"><img src="https://itinerae.neocities.org/pixels/tiny/icecream.gif" alt=""> now playing</h2><div class="player">
         <div class="player-screen"><span class="marquee" id="track">♪ INSERT YOUR FAVOURITE DISC ♪ &nbsp; ♡ &nbsp; ♪ INSERT YOUR FAVOURITE DISC ♪</span></div>
         <div class="disc-wrap"><div class="disc" id="disc">♡</div><div><b id="song-title">The Daydream Mix</b><div class="tiny" id="song-state">player on standby</div></div></div>
         <div class="player-controls"><button id="prev" aria-label="Previous track">◀◀</button><button id="play" aria-label="Play or pause">▶</button><button id="next" aria-label="Next track">▶▶</button><button id="stop" aria-label="Stop">■</button></div>
         <label class="tiny" for="volume">VOLUME</label><input class="meter" id="volume" type="range" min="0" max="100" value="35">
       </div><p class="tiny">A little pretend jukebox for now. Add your own audio files in the playlist near the bottom of this HTML.</p></section>
-      <section class="box" id="calendar"><h2 class="box-title">date keeper</h2><div class="calendar"><div class="calendar-head"><button id="prev-month">◂</button><b id="month-label"></b><button id="next-month">▸</button></div><div class="days" id="days"></div></div></section>
-      <section class="box"><h2 class="box-title">mini bulletin</h2><div class="entry"><div class="date">PINNED NOTE</div><p>Remember to drink some water, stretch your shoulders, and look out of the window for a moment.</p></div><div class="entry"><div class="date">SITE UPDATE</div><p>The little desktop has been tidied up. New treasures may appear soon!</p></div></section>
-      <section class="box"><h2 class="box-title">pixel garden</h2><div style="text-align:center;font-size:25px;line-height:1.7">✿ ❀ ✿<br>૮₍ ˶ᵔ ᵕ ᵔ˶ ₎ა<br>♡ ❀ ♡</div><div class="tiny" style="text-align:center">growing at its own pace</div></section>
-      <section class="box"><h2 class="box-title">thank you!</h2><p class="tiny" style="text-align:center">Thanks for visiting this tiny corner of the internet. Come back whenever you need a little softness. ♡</p></section>
+      <section class="box" id="calendar"><h2 class="box-title"><img src="https://itinerae.neocities.org/pixels/tiny/icecream.gif" alt=""> date keeper</h2><div class="calendar"><div class="calendar-head"><button id="prev-month">◂</button><b id="month-label"></b><button id="next-month">▸</button></div><div class="days" id="days"></div></div></section>
+      <section class="box"><h2 class="box-title"><img src="https://itinerae.neocities.org/pixels/tiny/dotwhite.gif" alt=""> mini bulletin</h2><div class="entry"><div class="date">PINNED NOTE</div><p>Remember to drink some water, stretch your shoulders, and look out of the window for a moment.</p></div><div class="entry"><div class="date">SITE UPDATE</div><p>The little desktop has been tidied up. New treasures may appear soon!</p></div></section>
+      <section class="box"><h2 class="box-title"><img src="https://itinerae.neocities.org/pixels/tiny/fang1.gif" alt=""> pixel garden</h2><div style="text-align:center;font-size:25px;line-height:1.7">✿ ❀ ✿<br>૮₍ ˶ᵔ ᵕ ᵔ˶ ₎ა<br>♡ ❀ ♡</div><div class="tiny" style="text-align:center">growing at its own pace</div></section>
+      <section class="box"><h2 class="box-title"><img src="https://itinerae.neocities.org/pixels/tiny/heart.gif" alt=""> thank you!</h2><p class="tiny" style="text-align:center">Thanks for visiting this tiny corner of the internet. Come back whenever you need a little softness. ♡</p></section>
     </aside>
   </div>
   <footer class="footer">✿ handmade with care · best viewed with a cup of something sweet · see you soon ♡ ✿</footer>
