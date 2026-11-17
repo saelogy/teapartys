@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#ffedf5">
-<title>♡ sugarplum desktop ♡</title>
+<title>♡ sugarplum desktop · GitHub Pages ♡</title>
 <style>
 @font-face{font-family:RainyHearts;src:url('https://dl.dropbox.com/s/1479f8x52y3z5u4/rainyhearts.ttf') format('truetype');font-display:swap}
 @font-face{font-family:Pixel;src:url('https://itinerae.shop/fonts/04b03.ttf');font-display:swap}
@@ -33,7 +33,7 @@ button,input{font:inherit;color:inherit}
 .column::-webkit-scrollbar{width:12px}
 .column::-webkit-scrollbar-track{background:#fff4f7;border:1px dashed #e4bdcb}
 .column::-webkit-scrollbar-thumb{background:#fff;border:1px dashed #d9aebd;border-radius:4px;box-shadow:inset 0 0 3px #ffc8d9}
-.box{position:relative;padding:7px;border:1px dashed #dcbcc7;border-radius:4px;background:rgba(255,253,251,.98);box-shadow:0 0 0 2px #fff,0 0 0 3px #f0dce3}
+.box{position:relative;flex:0 0 auto;padding:7px;border:1px dashed #dcbcc7;border-radius:4px;background:rgba(255,253,251,.98);box-shadow:0 0 0 2px #fff,0 0 0 3px #f0dce3}
 .box:before{content:"✿";position:absolute;top:-9px;left:calc(50% - 6px);padding:0 3px;background:#fff;color:#e7b1c3;font-size:11px}
 .box-title{margin:0 0 7px;padding:4px 2px;text-align:center;text-transform:uppercase;letter-spacing:2px;font:9px Pixel,monospace;color:#a77d6c;background:linear-gradient(90deg,transparent,#ffedf4 20%,#ffedf4 80%,transparent)}
 .box p{margin:5px 0}
@@ -266,6 +266,59 @@ body{
 .days span.selected{outline:1px solid #c98da2;background:#ffeaf1}
 .calendar-note{margin-top:7px;padding:6px;border:1px dashed #e4bdca;background:#fff8fb;font:italic 10px Georgia,serif;min-height:30px}
 
+
+/* FIX: keep the decorative inset frame behind real box content.
+   Some browsers paint the positioned ::before layer above normal-flow children. */
+.box{
+  isolation:isolate;
+  flex:0 0 auto;
+  min-height:72px;
+}
+.box:before{
+  z-index:0;
+  pointer-events:none;
+}
+.box > :not(.box-title){
+  position:relative;
+  z-index:1;
+  visibility:visible;
+  opacity:1;
+}
+.box > .box-title{
+  position:absolute;
+  z-index:3;
+  visibility:visible;
+  opacity:1;
+}
+.box p,.box li,.box article,.box .profile,.box .status,.box .note,
+.box .counter,.box .gallery,.box .player,.box .calendar,.box .tiny{
+  color:inherit;
+}
+.box .tiny{color:#aa8c91}
+.box .entry p,.box .welcome{color:#9c777a}
+.box .box-title{color:#b88d91}
+.box .avatar img,.box-title img{display:inline-block}
+
+
+.guestbook-form{display:grid;gap:5px;margin:8px 0 10px;padding:8px;border:1px dashed #e4bdca;background:#fff8fb}
+.guestbook-form input,.guestbook-form textarea{
+  width:100%;min-width:0;padding:7px;border:1px solid #e7c4d0;
+  background:#fffdfd;color:#9c777a;font:12px Georgia,serif;resize:vertical;
+}
+.guestbook-form input:focus,.guestbook-form textarea:focus{outline:1px dotted #d99eb0;outline-offset:2px}
+.guestbook-form button{
+  padding:7px;border:1px solid #e4bdca;background:linear-gradient(#fff,#ffeef4);
+  color:#a97976;font:italic 11px Georgia,serif;cursor:pointer;
+}
+.guestbook-form button:disabled{opacity:.6;cursor:wait}
+.guestbook-status{margin:2px 0 0!important;min-height:16px}
+.guestbook-entry{padding:8px 5px;border-bottom:1px dotted #e8c8d2;overflow-wrap:anywhere}
+.guestbook-entry:last-child{border-bottom:0}
+.guestbook-entry strong{color:#d28fa5;font:italic 12px Georgia,serif}
+.guestbook-entry time{display:block;margin:2px 0 4px;color:#b99a9b;font:9px Pixel,monospace}
+.guestbook-entry p{margin:3px 0;font:12px/1.45 Georgia,serif;color:#98777a;white-space:pre-wrap}
+.guestbook-empty{padding:8px;text-align:center;color:#b99a9b;font:italic 11px Georgia,serif}
+
 </style>
 </head>
 <body>
@@ -298,7 +351,21 @@ body{
         <div class="snap"><div class="snap-art">☁</div><small>cloud watching</small></div>
         <div class="snap"><div class="snap-art">♡</div><small>paper keepsakes</small></div>
       </div><p class="tiny">A few little things gathered just because they make the day prettier. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi; let the collection grow slowly.</p></section>
-      <section class="box" id="links"><h2 class="box-title"><img src="https://itinerae.neocities.org/pixels/tiny/dot.gif" alt=""> little places to visit</h2><ul class="links"><li><a href="https://neocities.org/" target="_blank" rel="noopener">Neocities — make a little website</a></li><li><a href="https://www.are.na/" target="_blank" rel="noopener">Are.na — collect visual inspiration</a></li><li><a href="https://archive.org/" target="_blank" rel="noopener">Internet Archive — wander through time</a></li></ul><p class="tiny">Lorem ipsum dolor sit amet, consectetur adipiscing elit. These are little doorways to other corners of the web; follow a link and see where the afternoon goes.</p></section>
+      <section class="box" id="links">
+        <h2 class="box-title"><img src="https://itinerae.neocities.org/pixels/tiny/memo.gif" alt=""> little guestbook</h2>
+        <p class="tiny">Leave a little hello for the next visitor ♡ Entries are shared with everyone who visits this page.</p>
+        <form id="guestbook-form" class="guestbook-form">
+          <label class="tiny" for="guest-name">YOUR NAME / NICKNAME</label>
+          <input id="guest-name" name="name" maxlength="32" required placeholder="a little nickname">
+          <label class="tiny" for="guest-message">YOUR MESSAGE</label>
+          <textarea id="guest-message" name="message" maxlength="400" required rows="3" placeholder="write something sweet..."></textarea>
+          <button type="submit" id="guest-submit">SIGN THE GUESTBOOK ♡</button>
+          <p class="guestbook-status tiny" id="guestbook-status" aria-live="polite">The guestbook is waiting to be connected.</p>
+        </form>
+        <div class="guestbook-entries" id="guestbook-entries" aria-live="polite">
+          <p class="tiny">Connect the guestbook database to load visitor notes here.</p>
+        </div>
+      </section>
     </main>
     <aside class="column right">
       <section class="box" id="music"><h2 class="box-title"><img src="https://itinerae.neocities.org/pixels/tiny/icecream.gif" alt=""> now playing</h2><div class="player">
@@ -317,98 +384,99 @@ body{
 </div>
 
 <script>
-const playlist = [
-  {title:"The Daydream Mix",src:""},
-  {title:"Strawberry Afternoon",src:""},
-  {title:"Moonlight Postcard",src:""}
-];
-let current=0, audio=null;
-const track=document.getElementById('track');
-const disc=document.getElementById('disc');
-const state=document.getElementById('song-state');
-const title=document.getElementById('song-title');
-const playButton=document.getElementById('play');
-const volume=document.getElementById('volume');
-const urlInput=document.getElementById('audio-url');
 
-function setTrack(){
-  const item=playlist[current];
-  title.textContent=item.title;
-  track.textContent="♪ "+item.title.toUpperCase()+"  ·  ♡  ·  ♪ "+item.title.toUpperCase()+"  ·  ♡  ·  ";
-  state.textContent=item.src?"ready to play":"paste an audio URL below";
-  urlInput.value=item.src;
+/* GITHUB PAGES VERSION — publish this HTML in your Pages repository.
+   SHARED GUESTBOOK SETUP:
+   Add your Supabase project URL and anon/public key below.
+   Never put a service_role key in this file. */
+const GUESTBOOK_CONFIG = {
+  supabaseUrl: "https://YOUR-PROJECT.supabase.co",
+  anonKey: "YOUR_SUPABASE_ANON_KEY"
+};
+const guestForm = document.getElementById("guestbook-form");
+const guestEntries = document.getElementById("guestbook-entries");
+const guestStatus = document.getElementById("guestbook-status");
+const guestSubmit = document.getElementById("guest-submit");
+const guestEndpoint = () => GUESTBOOK_CONFIG.supabaseUrl.replace(/\/+$/, "") + "/rest/v1/guestbook";
+
+function guestbookConfigured(){
+  return !GUESTBOOK_CONFIG.supabaseUrl.includes("YOUR-PROJECT") &&
+         !GUESTBOOK_CONFIG.anonKey.includes("YOUR_SUPABASE");
 }
-function stopAudio(){
-  if(audio){audio.pause();audio.currentTime=0;}
-  disc.classList.remove('spin');
-  playButton.textContent='▶';
+function guestHeaders(extra={}){
+  return {
+    "apikey": GUESTBOOK_CONFIG.anonKey,
+    "Authorization": "Bearer " + GUESTBOOK_CONFIG.anonKey,
+    "Content-Type": "application/json",
+    ...extra
+  };
 }
-function loadCurrentAudio(){
-  const item=playlist[current];
-  const src=urlInput.value.trim();
-  if(src) item.src=src;
-  if(!item.src){state.textContent="please paste an MP3 or audio URL first";return false;}
-  stopAudio();
-  audio=new Audio(item.src);
-  audio.volume=Number(volume.value)/100;
-  audio.addEventListener('ended',()=>{stopAudio();state.textContent="track finished ♡";});
-  state.textContent="track loaded — press play ♡";
-  return true;
+function escapeGuestText(value){
+  return String(value).replace(/[&<>"']/g, ch => ({
+    "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"
+  }[ch]));
 }
-document.getElementById('load-audio').addEventListener('click',loadCurrentAudio);
-playButton.addEventListener('click',async()=>{
-  const item=playlist[current];
-  if(!item.src && !urlInput.value.trim()){state.textContent="paste an MP3 or audio URL first";urlInput.focus();return;}
-  if(!audio || audio.src!==new URL(item.src || urlInput.value.trim(),document.baseURI).href){
-    if(!loadCurrentAudio()) return;
+async function loadGuestbook(){
+  if(!guestbookConfigured()){
+    guestStatus.textContent = "Setup needed: add your Supabase URL and anon key in this file.";
+    guestEntries.innerHTML = '<p class="guestbook-empty">♡ Guestbook waiting for its little database ♡</p>';
+    return;
   }
-  if(audio.paused){
-    try{await audio.play();disc.classList.add('spin');playButton.textContent='Ⅱ';state.textContent='now playing ♡';}
-    catch(e){state.textContent='this audio file could not be played';}
-  }else{
-    audio.pause();disc.classList.remove('spin');playButton.textContent='▶';state.textContent='paused ♡';
+  guestEntries.innerHTML = '<p class="guestbook-empty">Loading visitor notes... ♡</p>';
+  try{
+    const response = await fetch(guestEndpoint() + "?select=id,name,message,created_at&order=created_at.desc&limit=50", {
+      headers: guestHeaders()
+    });
+    if(!response.ok) throw new Error("Could not load notes (" + response.status + ").");
+    const rows = await response.json();
+    if(!rows.length){
+      guestEntries.innerHTML = '<p class="guestbook-empty">You can be the first to leave a little hello ♡</p>';
+      return;
+    }
+    guestEntries.innerHTML = rows.map(row => {
+      const date = new Date(row.created_at);
+      const stamp = Number.isNaN(date.getTime()) ? "" : date.toLocaleString(undefined,{dateStyle:"medium",timeStyle:"short"});
+      return '<article class="guestbook-entry"><strong>♡ ' + escapeGuestText(row.name) + '</strong>' +
+        '<time>' + escapeGuestText(stamp) + '</time><p>' + escapeGuestText(row.message) + '</p></article>';
+    }).join("");
+    guestStatus.textContent = "Showing the latest " + rows.length + " little notes. ♡";
+  }catch(error){
+    guestEntries.innerHTML = '<p class="guestbook-empty">The guestbook could not load just now.</p>';
+    guestStatus.textContent = error.message + " Check the setup guide and database policies.";
+  }
+}
+guestForm.addEventListener("submit", async event => {
+  event.preventDefault();
+  if(!guestbookConfigured()){
+    guestStatus.textContent = "Please add your Supabase URL and anon key first.";
+    return;
+  }
+  const name = document.getElementById("guest-name").value.trim();
+  const message = document.getElementById("guest-message").value.trim();
+  if(!name || !message) return;
+  guestSubmit.disabled = true;
+  guestStatus.textContent = "Saving your little note...";
+  try{
+    const response = await fetch(guestEndpoint(), {
+      method:"POST",
+      headers:guestHeaders({"Prefer":"return=minimal"}),
+      body:JSON.stringify({name,message})
+    });
+    if(!response.ok){
+      const detail = await response.text();
+      throw new Error("Could not save note (" + response.status + "). " + detail.slice(0,180));
+    }
+    guestForm.reset();
+    guestStatus.textContent = "Your note has been added for everyone to see. Thank you! ♡";
+    await loadGuestbook();
+  }catch(error){
+    guestStatus.textContent = error.message + " Please try again.";
+  }finally{
+    guestSubmit.disabled = false;
   }
 });
-document.getElementById('stop').addEventListener('click',()=>{stopAudio();state.textContent='stopped';});
-document.getElementById('prev').addEventListener('click',()=>{stopAudio();current=(current+playlist.length-1)%playlist.length;setTrack();});
-document.getElementById('next').addEventListener('click',()=>{stopAudio();current=(current+1)%playlist.length;setTrack();});
-volume.addEventListener('input',()=>{if(audio)audio.volume=Number(volume.value)/100;});
-setTrack();
+loadGuestbook();
 
-let shown=new Date();
-let selectedDate=new Date();
-const note=document.getElementById('calendar-note');
-function drawCalendar(){
-  const y=shown.getFullYear(),m=shown.getMonth();
-  const first=new Date(y,m,1).getDay();
-  const count=new Date(y,m+1,0).getDate();
-  document.getElementById('month-label').textContent=shown.toLocaleDateString(undefined,{month:'long',year:'numeric'});
-  const host=document.getElementById('days');
-  host.innerHTML='';
-  ['S','M','T','W','T','F','S'].forEach(d=>{
-    const s=document.createElement('span');s.textContent=d;s.className='weekday';s.style.color='#c39766';s.style.cursor='default';host.appendChild(s);
-  });
-  for(let i=0;i<first;i++){const s=document.createElement('span');s.className='blank';s.textContent='';host.appendChild(s);}
-  const today=new Date();
-  for(let d=1;d<=count;d++){
-    const s=document.createElement('span');
-    s.textContent=d;
-    const isToday=d===today.getDate()&&m===today.getMonth()&&y===today.getFullYear();
-    const isSelected=d===selectedDate.getDate()&&m===selectedDate.getMonth()&&y===selectedDate.getFullYear();
-    if(isToday)s.classList.add('today');
-    if(isSelected)s.classList.add('selected');
-    s.setAttribute('role','button');s.setAttribute('tabindex','0');
-    s.setAttribute('aria-label',new Date(y,m,d).toDateString());
-    const choose=()=>{selectedDate=new Date(y,m,d);note.textContent='♡ '+selectedDate.toLocaleDateString(undefined,{weekday:'long',month:'long',day:'numeric',year:'numeric'})+' — a lovely day to make a little memory. ♡';drawCalendar();};
-    s.addEventListener('click',choose);
-    s.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();choose();}});
-    host.appendChild(s);
-  }
-  if(!note.dataset.initialized){note.textContent='♡ today is '+today.toLocaleDateString(undefined,{month:'long',day:'numeric'})+' — choose any date ♡';note.dataset.initialized='yes';}
-}
-document.getElementById('prev-month').addEventListener('click',()=>{shown=new Date(shown.getFullYear(),shown.getMonth()-1,1);drawCalendar();});
-document.getElementById('next-month').addEventListener('click',()=>{shown=new Date(shown.getFullYear(),shown.getMonth()+1,1);drawCalendar();});
-drawCalendar();
 </script>
 
 </body>
