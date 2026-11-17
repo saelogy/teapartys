@@ -19,6 +19,7 @@ body{margin:0;background-color:#f4efe7;color:var(--ink);font-family:'Quicksand',
 a{color:var(--rose);text-decoration:none}a:hover{color:#8d747b;text-decoration:underline}
 button,input,textarea{font:inherit;color:inherit}
 .site-shell{max-width:1120px;margin:38px auto;padding:17px;position:relative;
+ background-image:radial-gradient(circle at 1px 1px,rgba(231,190,201,.35) 1.2px,transparent 1.5px);background-size:14px 14px;
  background:var(--ivory);border:2px solid #fffdf8;outline:1px solid #e9d9d8;
  box-shadow:0 12px 45px var(--shadow)}
 /* The scalloped lace is the outside edge of the frame, not an inset border. */
@@ -28,29 +29,35 @@ button,input,textarea{font:inherit;color:inherit}
  radial-gradient(circle at 10px 10px,#fffdf8 8px,transparent 8.8px) 10px 10px/20px 20px;
  filter:drop-shadow(0 1px 0 #e8d9d7)}
 .site-shell:after{content:"";position:absolute;inset:-5px;pointer-events:none;border:1px solid rgba(255,255,255,.9)}
-.masthead{min-height:190px;position:relative;overflow:hidden;display:grid;place-items:center;text-align:center;
- background:linear-gradient(125deg,#f7e8e7 0%,#fffaf1 53%,#e7eee2 100%);
+.masthead{min-height:220px;position:relative;overflow:hidden;display:grid;place-items:center;text-align:center;
+ background-color:#f8e8eb;
+ background-image:radial-gradient(circle,#fff 2px,transparent 2.5px),radial-gradient(circle,#e7c4ce 1.5px,transparent 2px),linear-gradient(125deg,#f7e8e7 0%,#fffaf1 53%,#e7eee2 100%);
+ background-size:23px 23px,37px 37px,100% 100%;background-position:0 0,10px 8px,0 0;
  border:1px solid #fff; padding:28px 18px;margin-bottom:20px}
 .masthead:before,.masthead:after{content:"✿  ·  ˚  ♡  ˚  ·  ✿  ·  ˚  ♡  ˚  ·  ✿";position:absolute;color:#fff;opacity:.8;letter-spacing:8px;font-size:18px;white-space:nowrap}
 .masthead:before{top:13px;left:0;right:0}.masthead:after{bottom:8px;left:0;right:0}
-.eyebrow{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:#a88e92}
-h1{font-family:'Playfair Display',serif;font-size:clamp(34px,6vw,59px);font-weight:500;font-style:italic;line-height:1.08;margin:8px 0;color:#9d7e87;text-shadow:2px 2px 0 #fff}
+.eyebrow{font-family:'Press Start 2P','DM Mono',monospace;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:#a88e92}
+h1{font-family:'Silkscreen','Playfair Display',serif;font-size:clamp(25px,4.5vw,48px);font-weight:500;font-style:italic;line-height:1.08;margin:8px 0;color:#9d7e87;text-shadow:2px 2px 0 #fff}
 .subtitle{font-size:12px;letter-spacing:2px;color:#9b9990;margin:8px 0 0}
 .tiny-stars{position:absolute;font-size:24px;color:#fff;opacity:.9}.s1{left:8%;top:42%}.s2{right:9%;top:33%}.s3{right:17%;bottom:23%}
-.nav{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin:0 0 20px}
+.nav{display:flex;justify-content:center;gap:13px;flex-wrap:wrap;margin:0 0 20px}
+.nav:before{content:"✦  ♡  ✧  ☆  ♡  ✦";width:100%;text-align:center;color:#d6a9b5;font-size:13px;letter-spacing:9px;margin:-5px 0 -2px}
 .lace-btn{position:relative;display:inline-flex;align-items:center;justify-content:center;gap:6px;padding:8px 17px;
- color:#947c81;background:#fffaf6;border:1px dashed #d9c4c5;outline:3px dotted #fff;outline-offset:2px;
+ color:#947c81;background-color:#fffaf6;
+ background-image:radial-gradient(circle,#efd9df 1px,transparent 1.4px);background-size:8px 8px;
+ border:1px dashed #d9c4c5;outline:3px dotted #fff;outline-offset:2px;
  box-shadow:0 2px 5px var(--shadow);font-size:11px;font-weight:700;letter-spacing:1px;text-transform:lowercase;cursor:pointer;transition:.2s}
 .lace-btn:hover{background:#f8e9e9;transform:translateY(-2px);text-decoration:none}
 .layout{display:grid;grid-template-columns:230px minmax(0,1fr);gap:19px;align-items:start}
 .sidebar,.panel{background:var(--paper);border:1px solid #fff;outline:1px solid #eee2dc;box-shadow:0 3px 12px var(--shadow)}
 .sidebar{padding:14px;display:grid;gap:14px}
-.panel{padding:18px;margin-bottom:17px;scroll-margin-top:16px}
+.panel{padding:18px;margin-bottom:17px;scroll-margin-top:16px;position:relative;overflow:hidden}
+.panel:after{content:"♡ · ✦ · ♡";position:absolute;right:13px;top:7px;color:#e4c3cc;font-size:12px;letter-spacing:4px;pointer-events:none}
 .panel-title{display:flex;align-items:center;gap:9px;margin:0 0 13px;padding-bottom:8px;border-bottom:1px dashed #e6d4d3;
  font-family:'Playfair Display',serif;font-size:21px;font-style:italic;font-weight:500;color:#a17f88}
 .panel-title span{font-family:'Quicksand',sans-serif;font-size:12px;color:#c1a5a5}
 .profile-art{height:150px;display:grid;place-items:center;position:relative;overflow:hidden;
- background:linear-gradient(145deg,#f3dfe1,#f9f1e6 55%,#dfe8d9);border:5px solid white;outline:1px solid #e9d9d7}
+ background-color:#f4e4e8;background-image:radial-gradient(circle,#fff 2px,transparent 2.6px),linear-gradient(145deg,#f3dfe1,#f9f1e6 55%,#dfe8d9);background-size:18px 18px,100% 100%;border:5px solid white;outline:1px solid #e9d9d7}
 .profile-art .moon{font-size:69px;color:#fff;text-shadow:0 2px 12px #d7b7bf}
 .profile-art:after{content:"♡  ✧  ♡";position:absolute;bottom:7px;color:white;letter-spacing:7px}
 .profile-name{text-align:center;font-family:'Playfair Display',serif;font-size:20px;font-style:italic;color:#9c7f86;margin:8px 0 0}
@@ -90,15 +97,48 @@ h1{font-family:'Playfair Display',serif;font-size:clamp(34px,6vw,59px);font-weig
 #guest-output{font-size:11px;color:#87977e;margin-top:8px}
 .footer{text-align:center;padding:17px 8px 5px;font-size:10px;color:#aa9997;letter-spacing:1px}
 .footer .heart{color:#d2a8b0}
+
+/* Y2K maximalist extras */
+.pixel-label{font-family:'Press Start 2P',monospace;font-size:8px;line-height:1.8;letter-spacing:0;color:#a77e8b}
+.panel-title{font-family:'Silkscreen','Playfair Display',serif;font-size:23px}
+.entry-date,.status,.eyebrow{font-family:'Press Start 2P',monospace;font-size:8px;line-height:1.8}
+.entry{background-color:#fffaf7;background-image:radial-gradient(circle,#f0dce1 1px,transparent 1.4px);background-size:12px 12px}
+.sidebar{background-image:radial-gradient(circle,#f2e1e4 1px,transparent 1.5px);background-size:15px 15px}
+.polaroid{border:2px solid white;outline:1px dotted #dfc4cb}
+.photo{position:relative;overflow:hidden}
+.photo:after{content:"✧  ♡  ✧";position:absolute;bottom:5px;right:6px;font-size:11px;color:rgba(255,255,255,.8)}
+.tag{border:1px dotted #b8c7ae}
+.quote{background-color:#f7efed;background-image:radial-gradient(circle,#fff 1.5px,transparent 2px);background-size:14px 14px;border:1px dashed #e5cdd2}
+.player{background-image:radial-gradient(circle,#fff 1.5px,transparent 2px);background-size:13px 13px}
+.y2k-sticker{position:absolute;z-index:3;font-family:'Silkscreen',sans-serif;color:#bd929b;text-shadow:1px 1px #fff;pointer-events:none}
+.sticker-a{left:18px;bottom:24px;font-size:17px;transform:rotate(-12deg)}
+.sticker-b{right:22px;top:47px;font-size:22px;transform:rotate(12deg)}
+.heart-rain{position:fixed;inset:0;overflow:hidden;pointer-events:none;z-index:15}
+.rain-heart{position:absolute;top:-35px;color:#d89eae;text-shadow:1px 1px #fff;opacity:.72;animation:heartfall linear infinite}
+.rain-heart:nth-child(1){left:5%;animation-duration:13s;animation-delay:-4s;font-size:13px}
+.rain-heart:nth-child(2){left:16%;animation-duration:17s;animation-delay:-10s;font-size:10px;color:#fff}
+.rain-heart:nth-child(3){left:29%;animation-duration:15s;animation-delay:-7s;font-size:16px}
+.rain-heart:nth-child(4){left:43%;animation-duration:19s;animation-delay:-13s;font-size:11px}
+.rain-heart:nth-child(5){left:57%;animation-duration:14s;animation-delay:-2s;font-size:15px;color:#e7bdc7}
+.rain-heart:nth-child(6){left:69%;animation-duration:18s;animation-delay:-8s;font-size:10px}
+.rain-heart:nth-child(7){left:81%;animation-duration:16s;animation-delay:-5s;font-size:17px}
+.rain-heart:nth-child(8){left:94%;animation-duration:20s;animation-delay:-12s;font-size:12px}
+@keyframes heartfall{0%{transform:translate3d(0,-5vh,0) rotate(0deg);opacity:0}10%{opacity:.75}90%{opacity:.65}100%{transform:translate3d(35px,110vh,0) rotate(35deg);opacity:0}}
+@media(prefers-reduced-motion:reduce){.rain-heart,.disc.playing{animation:none}}
+
 @media(max-width:720px){.site-shell{margin:22px 14px;padding:12px}.layout{grid-template-columns:1fr}.sidebar{grid-template-columns:1fr 1fr;align-items:start}.profile-card{grid-row:span 2}.photo-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:430px){.sidebar{grid-template-columns:1fr}.profile-card{grid-row:auto}.two-col{grid-template-columns:1fr}.panel{padding:13px}.photo{height:100px}}
 </style>
 </head>
 <body>
+<div class="heart-rain" aria-hidden="true">
+ <span class="rain-heart">♥</span><span class="rain-heart">♡</span><span class="rain-heart">♥</span><span class="rain-heart">♡</span>
+ <span class="rain-heart">♥</span><span class="rain-heart">♡</span><span class="rain-heart">♥</span><span class="rain-heart">♡</span>
+</div>
 <div class="site-shell">
  <header class="masthead">
   <span class="tiny-stars s1">✧</span><span class="tiny-stars s2">♡</span><span class="tiny-stars s3">✦</span>
-  <div><div class="eyebrow">a tiny corner of the internet</div><h1>little daydream archive</h1><p class="subtitle">♡ collecting pretty things & little moments ♡</p></div>
+  <span class="y2k-sticker sticker-a">♡ cutie web ♡</span><span class="y2k-sticker sticker-b">✧彡</span><div><div class="eyebrow">a tiny corner of the internet</div><h1>little daydream archive</h1><p class="subtitle">♡ collecting pretty things & little moments ♡</p></div>
  </header>
  <nav class="nav" aria-label="Main navigation">
   <a class="lace-btn" href="#home">♡ home</a><a class="lace-btn" href="#diary">diary</a><a class="lace-btn" href="#gallery">scrapbook</a><a class="lace-btn" href="#music">music</a><a class="lace-btn" href="#guestbook">guestbook</a>
@@ -115,7 +155,7 @@ h1{font-family:'Playfair Display',serif;font-size:clamp(34px,6vw,59px);font-weig
     <a href="#about">♡ about this space</a><a href="#diary">♡ recent thoughts</a><a href="#gallery">♡ photo diary</a><a href="#favourites">♡ favourites</a><a href="#guestbook">♡ say hello</a>
    </div></section>
    <section class="mini-note"><span class="stamp">NOTE TO SELF</span><p>make room for softness. notice the small things. romanticise the ordinary.</p><div class="small">— a reminder, always</div></section>
-   <section class="center"><div class="eyebrow">visitors welcome</div><div style="font-family:'DM Mono';font-size:19px;color:#a88c91">000128</div><div class="small">you are visitor number ♡</div></section>
+   <section class="center"><div class="pixel-label">VISITORS WELCOME</div><div style="font-family:'DM Mono';font-size:19px;color:#a88c91">000128</div><div class="small">you are visitor number ♡</div></section>
   </aside>
   <main>
    <section class="panel" id="home">
