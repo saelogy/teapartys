@@ -447,6 +447,104 @@ body{
 ::selection{background:#e9def2;color:#83748f}
 @media(max-width:680px){.angel-ornament{gap:7px;min-height:58px}.angel-ornament:before,.angel-ornament:after{content:'୨୧ ♡';font-size:10px}.angel-decostuff{width:58px}.angel-berry{width:25px}.angel-caption{font-size:9px;letter-spacing:1px}.angel-stereo{gap:6px}}
 
+
+/* ── ivory, blush & whisper-sage refinement ── */
+:root{
+ --ink:#897b79;--muted:#b7a5a0;--rose:#e9c6cb;--deep:#c99ba5;
+ --pink:#f8e8e8;--blush:#fff5f1;--cream:#fffaf0;--paper:#fffdf7;
+ --line:#eadbd0;--berry:#bd8992;--shadow:0 7px 20px #9f82731a;
+}
+body{
+ color:#8f817c;
+ background-color:#f8f3e9;
+ background-image:
+  radial-gradient(#fffdf6 1px,transparent 1.7px),
+  radial-gradient(#dce7d9 1px,transparent 1.8px),
+  linear-gradient(135deg,#fffaf1,#f8e9e8 54%,#f1f4e9);
+ background-size:27px 27px,53px 53px,100% 100%;
+}
+.site-wrap{
+ border:18px solid transparent;
+ border-image:url("https://itinerae.nekoweb.org/premium/20/lace-border.png") 11 fill round;
+ outline:0!important;
+ background:linear-gradient(#fffdf7f5,#fffdf7f5),repeating-linear-gradient(45deg,#f7eee4 0 3px,#fffdf8 3px 7px);
+ box-shadow:0 16px 40px #9f88751c!important;
+ padding:24px 25px 30px;
+}
+.site-wrap:before,.site-wrap:after{display:none!important;content:none!important}
+/* Let the lace itself be the complete outer edge: no secondary rings. */
+.site-wrap{filter:drop-shadow(0 5px 8px #9c82701a)}
+.masthead,.navbar,.panel,.welcome,.post,.footer,.angel-stereo{
+ background-color:#fffdf7;
+ box-shadow:inset 0 0 0 1px #fff,0 4px 12px #a68c7b12;
+}
+.masthead{
+ background:linear-gradient(#fffdf5dc,#f9e9e8d9),url("https://itinerae.nekoweb.org/premium/20/banner.webp") center/cover no-repeat;
+ border-image-source:url("https://itinerae.shop/premium/demo/22/whitebowborder.png");
+ outline:0;
+}
+.masthead:before,.masthead:after{color:#d8c9c0}
+.masthead h1{color:#c69ca2;text-shadow:2px 2px #fffdf7,4px 4px #f0dfdc,0 0 10px #fff}
+.masthead h1 span,.masthead .subtitle{color:#d6aeb2}
+.masthead .eyebrow,.topline{color:#a99a8c}
+.masthead .seal{border-color:#e6d4cc;background:#fffdf5;color:#c9a6a6;outline-color:#eee1d8}
+.ribbon{background:linear-gradient(#e9c9cb,#d8b7b8);color:#fffdf7;box-shadow:0 3px 0 #c7a5a6;text-shadow:1px 1px #c5a0a3}
+.ribbon:before,.ribbon:after{border-top-color:#e3c4c5;border-bottom-color:#c7a5a6}
+.navbar{
+ border:10px solid transparent;
+ border-image:url("https://itinerae.shop/premium/demo/22/whitebowborder.png") 12 fill round;
+ background:linear-gradient(#fffdf8,#fbf0ec);
+ box-shadow:0 4px 12px #a68c7b12;
+}
+.navbar a,.soft-button,.todo-list li button{
+ border:7px solid transparent!important;
+ border-image:url("https://itinerae.nekoweb.org/premium/20/lace-border.png") 11 fill round!important;
+ border-radius:0!important;
+ background:linear-gradient(#fffef9,#f8e9e7)!important;
+ color:#a98787!important;
+ box-shadow:inset 0 0 0 1px #fffdf7,0 2px 4px #b69b8a18!important;
+ text-shadow:0 1px #fff;
+}
+.navbar a{padding:5px 9px;font-family:"Pixel04",monospace}
+.navbar a:before{color:#c9a8a7}
+.soft-button{padding:5px 9px;font-family:"Pixel04",monospace}
+.soft-button:hover,.navbar a:hover{background:linear-gradient(#fff,#f2e2df)!important;transform:translateY(-1px)}
+.panel{
+ border:9px solid transparent;
+ border-image:url("https://itinerae.nekoweb.org/premium/20/lace-border.png") 11 fill round;
+ background:linear-gradient(#fffdf8,#fffaf4);
+ box-shadow:inset 0 0 0 1px #fff,0 4px 12px #a68c7b12;
+}
+.panel:before{opacity:.62;filter:grayscale(.55) brightness(1.13)}
+.panel:after,.panel-title:before,.panel-title:after{color:#d8c3b8}
+.panel-title{
+ border-color:#eadbd1;
+ background:radial-gradient(ellipse at 50% 0%,#fff 0 5px,transparent 6px) 0 0/16px 10px repeat-x,linear-gradient(90deg,#f8e9e6,#fffdf7 48%,#f8e9e6);
+ color:#b58f91;box-shadow:inset 0 0 0 2px #fff,0 2px 0 #f0e2da;
+}
+.profile-card h2,.welcome h2,.post-title,.scrap h3{color:#bd9296}
+.portrait{outline-color:#dfc7c1;box-shadow:0 0 0 5px #f7eee5;background:radial-gradient(circle at 40% 30%,#fff 0 8%,transparent 9%),linear-gradient(145deg,#f6e4e1,#f1f4e9)}
+.tag,.stamp{border-color:#e6d5cc;background:linear-gradient(135deg,#fffdf7,#f8e9e7);color:#ad8b8c}
+.mini-note,.scrap,.guest-entry{background:#fffaf3;border-image-source:url("https://itinerae.shop/premium/demo/22/whitebowborder.png");}
+.post-head{background:linear-gradient(90deg,#f8e9e6,#fffdf7,#f3f5eb);border-image-source:url("https://itinerae.shop/premium/demo/22/whitebowborder.png");}
+.post-head:after{background:#fffdf7;color:#bd9998}
+.post-icon{border-color:#e6d5cc;color:#bd9998}
+.post-foot{background:#fbf4ec;border-top-color:#eadbd1;color:#a99a8c}
+.field-row input,.guest-form input,.guest-form textarea,.note-area,.todo-input{border-color:#e6d8ce;background:#fffef9;color:#8f817c;box-shadow:inset 0 1px 3px #cbb8a522,0 0 0 2px #fff}
+.spotify-frame{background:#f8efea;border-color:#eadbd1}
+.weather-temp,.clock{color:#bd9296}
+.calendar .day{color:#af9190;background:#f8eae6}.calendar .today{background:#d6c6b1;color:#fff}
+.guest-entry b,.currently-list b{color:#b58e91}
+.footer{border-image-source:url("https://itinerae.shop/premium/demo/22/whitebowborder.png");background:linear-gradient(#fffdf7,#f8efea);color:#a9948b}
+.footer:before{background:#fffdf7;color:#c2a2a0}
+.angel-ornament,.angel-divider,.heart-divider{color:#c5aaa2}
+.angel-ornament:before,.angel-ornament:after{color:#d8c9bd}
+.angel-caption{background:#fffdf7ba;border-color:#eadbd1}
+.angel-stereo{background:linear-gradient(#fffdf7,#f7eee8);border-color:#e8d9d0;color:#b49791}
+.angel-decostuff,.angel-berry,.angel-stereo img,.angel-divider img{filter:saturate(.42) brightness(1.16)}
+::selection{background:#ead3d1;color:#786b65}
+@media(max-width:680px){.site-wrap{padding:18px 12px 24px;border-width:13px}.navbar{border-width:7px}.panel{border-width:7px}}
+
 </style>
 </head>
 <body>
