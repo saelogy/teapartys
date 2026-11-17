@@ -374,11 +374,89 @@ a:hover{color:#f07da8;text-decoration:underline;text-shadow:0 0 5px #ffc5da}
 }
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;scroll-behavior:auto!important}}
 
+
+/* ── pale angelcore / strawberry milk additions ── */
+:root{
+ --ink:#82798e;--muted:#b4a8bd;--rose:#e7cbdc;--deep:#b7a8d0;
+ --pink:#f8eff8;--blush:#fff8fc;--cream:#fffdfd;--paper:#fffdfd;
+ --line:#e9dfee;--berry:#a99abb;--shadow:0 8px 24px #b6a8c51b;
+}
+body{
+ color:#837b91;
+ background-color:#fbf7fc;
+ background-image:
+  radial-gradient(ellipse at 12% 16%,#fff 0 2px,transparent 3px),
+  radial-gradient(ellipse at 86% 28%,#e8e2f3 0 2px,transparent 3px),
+  radial-gradient(#e7ddeb 1px,transparent 1.8px),
+  radial-gradient(#fff 1.5px,transparent 2px),
+  linear-gradient(135deg,#fffafd,#f4f0fa 48%,#fff8fb);
+ background-size:120px 120px,145px 145px,24px 24px,39px 39px,100% 100%;
+}
+.site-wrap{background:linear-gradient(#fffdfdf2,#fffdfdf2),repeating-linear-gradient(45deg,#f5edf8 0 3px,#fff 3px 7px);border-color:#e6dced;box-shadow:0 0 0 12px #f7f1fa,0 0 0 16px #fff,0 0 0 18px #e8dfee,0 18px 55px #9d8db51c}
+.site-wrap:before,.site-wrap:after{color:#c9bbd9;text-shadow:0 1px white}
+.masthead{background:linear-gradient(135deg,#fffefeef,#f7f1fbf2),repeating-linear-gradient(90deg,#fff 0 3px,#fbf7fd 3px 6px);box-shadow:0 0 0 1px #e8ddec,0 8px 22px #a99ab51b}
+.masthead:before,.masthead:after{color:#c9b8d9}
+.masthead h1{color:#aa9abb;text-shadow:2px 3px 0 #fff,4px 5px 0 #eee7f5}
+.masthead h1 span{color:#d8bfd7}
+.masthead .eyebrow,.topline{color:#b0a3bd}
+.masthead .subtitle{color:#9c91a9}
+.masthead .seal{border-color:#d9cce5;background:#fffdfdcc;color:#b6a5cb}
+.ribbon{background:#d8c9e4;color:#fff;box-shadow:0 3px 0 #c3b2d5}
+.ribbon:before,.ribbon:after{border-top-color:#cbbbdc;border-bottom-color:#cbbbdc}
+.navbar{background:#fffdfd;border-color:#e8deed;box-shadow:0 5px 18px #b8a8c31a}
+.navbar a{color:#9f91b0}.navbar a:before{color:#d8c6df}
+.panel{background:#fffefe;border-color:#e9dfef;box-shadow:0 6px 20px #a99ab516}
+.panel-title{color:#a89ab9;border-bottom-color:#e8dfef}
+.panel-title small,.fineprint,.tiny,.date-line,.post-meta{color:#b2a7bd}
+.profile-card h2,.welcome h2,.post-title,.scrap h3{color:#aa9abb}
+.portrait{outline-color:#d9cce5;box-shadow:0 0 0 5px #f6f0fa;background:radial-gradient(circle at 40% 30%,#fff 0 8%,transparent 9%),linear-gradient(145deg,#f4eaf7,#fff8fc)}
+.tag{border-color:#e9dfee;background:#fbf7fd;color:#a89ab9}
+.mini-note,.scrap,.guest-entry{background:#fcf8fd;border-color:#e8ddec}
+.stamp{border-color:#e5d9eb;background:linear-gradient(135deg,#fff,#f5eff9);color:#a99abb;box-shadow:2px 2px 0 #eee6f3}
+.welcome{background:linear-gradient(135deg,#fffefe,#f9f4fb)}
+.welcome .kicker,.welcome .signature{color:#b7a6c8}
+.post-head{background:linear-gradient(90deg,#f6eff9,#fffafd);border-bottom-color:#e8ddec}
+.post-icon{border-color:#e7ddec;color:#b6a4ca}
+.post-photo{outline-color:#e8deed;background:linear-gradient(135deg,#f3eaf7,#fff9fc)}
+.post-foot{background:#fcf9fd;border-top-color:#e9e0ee;color:#b2a7bd}
+.soft-button{border-color:#d9cce5;background:#f8f3fb;color:#9e90b1;border-radius:3px;box-shadow:1px 2px 0 #e9e0f0}
+.soft-button:hover{background:#eee6f5}
+.field-row input,.guest-form input,.guest-form textarea,.note-area,.todo-input{border-color:#e6ddec;background:#fffdfd;color:#837b91;border-radius:3px}
+.spotify-frame{background:#f6f0f9;border:1px solid #e8deed;border-radius:3px}
+.weather-temp,.clock{color:#aa9abb}
+.calendar .day{color:#a99abb;background:#f7f1fa}.calendar .today{background:#c9b9dc;color:white}
+.guest-entry b,.currently-list b{color:#a99abb}
+.footer{color:#aaa0b6}.footer .ornament,.heart-divider{color:#c8b8d9}
+.angel-ornament{min-height:70px;display:flex;align-items:center;justify-content:center;gap:18px;position:relative;margin:8px auto 12px;padding:3px 14px;text-align:center;color:#b4a6c4;font:11px "Pixel04",monospace;letter-spacing:2px}
+.angel-ornament:before,.angel-ornament:after{content:"୨୧　✧　♡　✧　୨୧";color:#d2c4df;opacity:.9;font-size:12px;white-space:nowrap}
+.angel-decostuff{width:clamp(70px,11vw,130px);max-height:76px;object-fit:contain;opacity:.86;filter:saturate(.62) brightness(1.13)}
+.angel-berry{width:35px;height:35px;object-fit:contain;opacity:.86;filter:saturate(.55) brightness(1.12)}
+.angel-caption{padding:7px 13px;border-top:1px dotted #e3d8eb;border-bottom:1px dotted #e3d8eb;background:#fffdfbba}
+.angel-stereo{display:flex;align-items:center;justify-content:center;gap:9px;margin:2px 0 9px;padding:7px;background:linear-gradient(180deg,#fff,#f6f0fa);border:1px solid #e8deed;box-shadow:inset 0 0 0 3px #fff;border-radius:4px;color:#a99abb;font:10px "Pixel04",monospace;letter-spacing:1px}
+.angel-stereo img{width:20px;height:20px;object-fit:contain;opacity:.82;filter:saturate(.45) brightness(1.12)}
+.angel-stereo img:first-child{width:34px;height:34px}
+.angel-divider{display:flex;align-items:center;justify-content:center;gap:14px;margin:20px auto 4px;min-height:26px;color:#c3b4d4;font:12px "Pixel04",monospace;letter-spacing:3px}
+.angel-divider img{max-width:180px;max-height:26px;object-fit:contain;opacity:.8;filter:saturate(.45) brightness(1.12)}
+/* angelic trims, scallops and tiny glints */
+.panel:after{content:'✧';color:#d5c7e1}
+.panel-title:before{color:#d8c8e4}
+.navbar a:before{content:'୨୧ '}
+.post-head{box-shadow:inset 0 -1px #fff}
+.masthead,.panel,.navbar,.welcome,.post,.angel-stereo{border-radius:4px}
+.site-wrap{outline:6px double #fff}
+::selection{background:#e9def2;color:#83748f}
+@media(max-width:680px){.angel-ornament{gap:7px;min-height:58px}.angel-ornament:before,.angel-ornament:after{content:'୨୧ ♡';font-size:10px}.angel-decostuff{width:58px}.angel-berry{width:25px}.angel-caption{font-size:9px;letter-spacing:1px}.angel-stereo{gap:6px}}
+
 </style>
 </head>
 <body>
 <div class="site-wrap">
   <div class="topline"><span>✿ an independently handmade corner of the web ✿</span><span class="status"><i class="dot"></i> site status: daydreaming</span></div>
+  <div class="angel-ornament" aria-label="strawberry and cherub decorations">
+    <img src="https://strawbunimilk.neocities.org/solveir/assets/img/decostuff.png" alt="" class="angel-decostuff" onerror="this.hidden=true">
+    <span class="angel-caption">୨୧ welcome to my little heaven ୨୧</span>
+    <img src="https://strawbunimilk.neocities.org/solveir/assets/img/strawberrym.png" alt="" class="angel-berry" onerror="this.hidden=true">
+  </div>
   <header class="masthead" id="home">
     <div class="eyebrow">a little scrapbook on the world wide web</div>
     <h1>petal <span>&amp;</span> pearl</h1>
@@ -441,7 +519,7 @@ a:hover{color:#f07da8;text-decoration:underline;text-shadow:0 0 5px #ffc5da}
     <aside class="column right-column">
       <section class="panel" id="currently"><h2 class="panel-title">♡ currently <small>life lately</small></h2><ul class="currently-list"><li><b>mood</b><span>soft &amp; sleepy</span></li><li><b>craving</b><span>strawberry cake</span></li><li><b>listening</b><span>dreamy pop ♫</span></li><li><b>dreaming of</b><span>a sunny afternoon</span></li><li><b>reading</b><span>something lovely</span></li></ul><div class="heart-divider">♡ ✿ ♡</div><p class="fineprint" style="text-align:center;margin:0">taking things one day at a time</p></section>
       <section class="panel" id="weather-widget"><h2 class="panel-title">☁ a little forecast</h2><div class="weather-top"><div><div class="weather-temp" id="temperature">--°</div><div class="tiny" id="weather-description">weather loading...</div></div><div class="weather-icon" id="weather-icon">🌤️</div></div><div class="tiny" id="weather-location">Allow location access for local weather.</div><button class="soft-button" id="refresh-weather" style="margin-top:8px">refresh weather ↻</button><div class="fineprint" style="margin-top:7px">weather by Open-Meteo</div></section>
-      <section class="panel" id="music-widget"><h2 class="panel-title">♫ currently listening</h2><iframe class="spotify-frame" id="spotify-frame" title="Spotify player" src="https://open.spotify.com/embed/playlist/37i9dQZF1DX4WYpdgoIcn6?utm_source=generator" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe><div class="fineprint">Paste a Spotify playlist, album or track URL:</div><div class="field-row"><input id="spotify-url" placeholder="open.spotify.com/..." aria-label="Spotify URL"><button class="soft-button" id="set-spotify">set</button></div></section>
+      <section class="panel" id="music-widget"><h2 class="panel-title">♫ currently listening</h2><div class="angel-stereo" aria-hidden="true"><img src="https://strawbunimilk.neocities.org/solveir/assets/img/cd.png" alt="" onerror="this.hidden=true"><span>♡ angel radio ♡</span><img src="https://strawbunimilk.neocities.org/solveir/assets/img/prevsong.png" alt="" onerror="this.hidden=true"><img src="https://strawbunimilk.neocities.org/solveir/assets/img/pausesong.png" alt="" onerror="this.hidden=true"><img src="https://strawbunimilk.neocities.org/solveir/assets/img/nextsong.png" alt="" onerror="this.hidden=true"></div><iframe class="spotify-frame" id="spotify-frame" title="Spotify player" src="https://open.spotify.com/embed/playlist/37i9dQZF1DX4WYpdgoIcn6?utm_source=generator" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe><div class="fineprint">Paste a Spotify playlist, album or track URL:</div><div class="field-row"><input id="spotify-url" placeholder="open.spotify.com/..." aria-label="Spotify URL"><button class="soft-button" id="set-spotify">set</button></div></section>
       <section class="panel"><h2 class="panel-title">⌚ a little moment</h2><div class="clock" id="clock">--:--</div><div class="date-line" id="date-line">loading the date...</div><div class="calendar" id="calendar"></div></section>
       <section class="panel"><h2 class="panel-title">♡ tiny to-do list</h2><div class="field-row"><input class="todo-input" id="todo-input" placeholder="add a little task..." aria-label="New task"><button class="soft-button" id="add-todo">add</button></div><ul class="todo-list" id="todo-list"></ul><div class="fineprint" style="margin-top:6px">saved privately in this browser</div></section>
       <section class="panel"><h2 class="panel-title">✎ a note to self</h2><textarea class="note-area" id="diary-note" placeholder="a thought to keep close..."></textarea><div class="fineprint" id="note-status" style="margin-top:5px">autosaves on this device</div><button class="soft-button" id="clear-note" style="margin-top:7px">clear note</button></section>
@@ -449,6 +527,7 @@ a:hover{color:#f07da8;text-decoration:underline;text-shadow:0 0 5px #ffc5da}
       <section class="panel" id="links"><h2 class="panel-title">♡ little links <small>outlinks</small></h2><ul class="nav-list"><li><a href="https://neocities.org/" target="_blank" rel="noopener">Neocities</a></li><li><a href="https://open.spotify.com/" target="_blank" rel="noopener">Spotify</a></li><li><a href="https://open-meteo.com/" target="_blank" rel="noopener">Open-Meteo</a></li><li><a href="#home">back to the top ↑</a></li></ul></section>
     </aside>
   </main>
+  <div class="angel-divider" aria-hidden="true"><img src="https://strawbunimilk.neocities.org/solveir/assets/img/dividersmall.png" alt="" onerror="this.hidden=true"><span>♡　✧　୨୧　✧　♡</span></div>
   <footer class="footer"><div class="ornament">୨୧　✿　♡　✿　୨୧</div>made with a little love, lots of lace &amp; too many bows · 2026<br>thank you for wandering through my little world ♡</footer>
 </div>
 <script>
