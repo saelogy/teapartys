@@ -154,6 +154,103 @@ body *::before,body *::after{
 .player{background-color:#f6efed}
 .guestbook input,.guestbook textarea{background-color:#fffdfa}
 .lace-btn{background-color:#fffaf6}
+
+/* === softer, narrower early-web scrapbook treatment === */
+:root{
+  --shadow: transparent;
+}
+.site-shell{
+  max-width: 880px;
+  margin: 28px auto;
+  padding: 13px;
+  box-shadow: none;
+  border: 2px ridge #fffaf4;
+  outline: 1px dotted #d9bfc5;
+  background-color: #fff9f1;
+  background-image:
+    radial-gradient(circle, rgba(220,177,190,.22) 1px, transparent 1.5px);
+  background-size: 9px 9px;
+}
+.site-shell:before{
+  filter: none;
+  background:
+    radial-gradient(circle at 10px 10px,#fffdf8 7px,transparent 7.8px) 0 0/18px 18px,
+    radial-gradient(circle at 10px 10px,#fffdf8 7px,transparent 7.8px) 9px 9px/18px 18px;
+}
+.masthead{
+  min-height: 178px;
+  margin-bottom: 14px;
+  border: 3px ridge #fffdf8;
+  background-color: #f8e9eb;
+  background-image:
+    radial-gradient(circle, rgba(255,255,255,.65) 1px, transparent 1.5px),
+    linear-gradient(135deg,#f8e8eb 0%,#fff9ee 55%,#e9eee3 100%);
+  background-size: 10px 10px, auto;
+}
+h1{text-shadow:none}
+.nav{gap:10px;margin-bottom:15px}
+.lace-btn{
+  padding:6px 12px;
+  border:2px outset #f4e5e5;
+  outline:1px dotted #d9c4c5;
+  outline-offset:2px;
+  box-shadow:none;
+  background-color:#fffaf6;
+  background-image:radial-gradient(circle,#efd9df 1px,transparent 1.4px);
+  background-size:7px 7px;
+}
+.lace-btn:hover{transform:none;border-style:inset}
+.layout{grid-template-columns:190px minmax(0,1fr);gap:14px}
+.sidebar,.panel{
+  box-shadow:none;
+  border:2px ridge #fff;
+  outline:1px dotted #e5d4d3;
+  background-color:#fffdf8;
+}
+.sidebar{padding:11px;gap:12px}
+.panel{padding:14px;margin-bottom:13px}
+.panel-title{font-size:20px}
+.profile-art{
+  border:4px ridge #fff;
+  outline:1px dotted #e9d9d7;
+}
+.status,.side-links a,.mini-note,.entry,.quote,.player,
+.guestbook input,.guestbook textarea,.player button{
+  box-shadow:none;
+}
+.status{border:1px dashed #d9c9bd}
+.side-links a{
+  border:1px dotted #e2c9ce;
+  border-left:3px solid #e6cfd1;
+  background-color:#fff8f4;
+}
+.mini-note{border:2px groove #fff;background-color:#f1f4ec}
+.entry{
+  border:2px groove #f4e9e3;
+  background-color:#fffaf7;
+  padding:10px;
+}
+.polaroid{
+  box-shadow:none;
+  border:3px ridge white;
+  outline:1px dotted #dfc4cb;
+}
+.disc{box-shadow:none}
+.player{border:2px inset #ead8d9}
+.player button{border:2px outset #ead8d9}
+.player button:active{border-style:inset}
+.quote{border:1px dashed #e5cdd2}
+.guestbook input,.guestbook textarea{border:2px inset #eadeda}
+.tag{border-radius:0}
+.y2k-sticker{text-shadow:none}
+@media(max-width:720px){
+  .site-shell{max-width:none;margin:18px 12px;padding:10px}
+  .layout{grid-template-columns:1fr}
+}
+@media(max-width:430px){
+  .site-shell{margin:12px 8px;padding:8px}
+}
+
 </style>
 </head>
 <body>
