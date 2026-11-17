@@ -6,6 +6,11 @@
 <meta name="theme-color" content="#f8f3e9">
 <title>♡ little daydream archive ♡</title>
 <style>
+@font-face{
+ font-family:'Rainy Hearts';
+ src:url('https://static.wfonts.com/data/2014/06/12/rainyhearts/rainyhearts.ttf') format('truetype');
+ font-style:normal;font-weight:100 900;font-display:swap;
+}
 @import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&family=Quicksand:wght@400;500;600;700&display=swap');
 :root{
  --ivory:#fbf7ed;--paper:#fffdf7;--pink:#efd8dc;--pink2:#f7e9e9;
@@ -31,8 +36,7 @@ button,input,textarea{font:inherit;color:inherit}
 .site-shell:after{content:"";position:absolute;inset:-5px;pointer-events:none;border:1px solid rgba(255,255,255,.9)}
 .masthead{min-height:220px;position:relative;overflow:hidden;display:grid;place-items:center;text-align:center;
  background-color:#f8e8eb;
- background-image:radial-gradient(circle,#fff 2px,transparent 2.5px),radial-gradient(circle,#e7c4ce 1.5px,transparent 2px),linear-gradient(125deg,#f7e8e7 0%,#fffaf1 53%,#e7eee2 100%);
- background-size:23px 23px,37px 37px,100% 100%;background-position:0 0,10px 8px,0 0;
+ background-image:linear-gradient(125deg,#f7e8e7 0%,#fffaf1 53%,#e7eee2 100%);
  border:1px solid #fff; padding:28px 18px;margin-bottom:20px}
 .masthead:before,.masthead:after{content:"✿  ·  ˚  ♡  ˚  ·  ✿  ·  ˚  ♡  ˚  ·  ✿";position:absolute;color:#fff;opacity:.8;letter-spacing:8px;font-size:18px;white-space:nowrap}
 .masthead:before{top:13px;left:0;right:0}.masthead:after{bottom:8px;left:0;right:0}
@@ -102,14 +106,14 @@ h1{font-family:'Silkscreen','Playfair Display',serif;font-size:clamp(25px,4.5vw,
 .pixel-label{font-family:'Press Start 2P',monospace;font-size:8px;line-height:1.8;letter-spacing:0;color:#a77e8b}
 .panel-title{font-family:'Silkscreen','Playfair Display',serif;font-size:23px}
 .entry-date,.status,.eyebrow{font-family:'Press Start 2P',monospace;font-size:8px;line-height:1.8}
-.entry{background-color:#fffaf7;background-image:radial-gradient(circle,#f0dce1 1px,transparent 1.4px);background-size:12px 12px}
-.sidebar{background-image:radial-gradient(circle,#f2e1e4 1px,transparent 1.5px);background-size:15px 15px}
+.entry{background-color:#fffaf7;background-image:none}
+.sidebar{background-image:none}
 .polaroid{border:2px solid white;outline:1px dotted #dfc4cb}
 .photo{position:relative;overflow:hidden}
 .photo:after{content:"✧  ♡  ✧";position:absolute;bottom:5px;right:6px;font-size:11px;color:rgba(255,255,255,.8)}
 .tag{border:1px dotted #b8c7ae}
-.quote{background-color:#f7efed;background-image:radial-gradient(circle,#fff 1.5px,transparent 2px);background-size:14px 14px;border:1px dashed #e5cdd2}
-.player{background-image:radial-gradient(circle,#fff 1.5px,transparent 2px);background-size:13px 13px}
+.quote{background-color:#f7efed;background-image:none;border:1px dashed #e5cdd2}
+.player{background-image:none}
 .y2k-sticker{position:absolute;z-index:3;font-family:'Silkscreen',sans-serif;color:#bd929b;text-shadow:1px 1px #fff;pointer-events:none}
 .sticker-a{left:18px;bottom:24px;font-size:17px;transform:rotate(-12deg)}
 .sticker-b{right:22px;top:47px;font-size:22px;transform:rotate(12deg)}
@@ -128,6 +132,28 @@ h1{font-family:'Silkscreen','Playfair Display',serif;font-size:clamp(25px,4.5vw,
 
 @media(max-width:720px){.site-shell{margin:22px 14px;padding:12px}.layout{grid-template-columns:1fr}.sidebar{grid-template-columns:1fr 1fr;align-items:start}.profile-card{grid-row:span 2}.photo-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:430px){.sidebar{grid-template-columns:1fr}.profile-card{grid-row:auto}.two-col{grid-template-columns:1fr}.panel{padding:13px}.photo{height:100px}}
+
+/* Rainy Hearts everywhere; preserve crisp, readable text over calm surfaces. */
+html,body,body *{
+ font-family:'Rainy Hearts',monospace !important;
+}
+body *::before,body *::after{
+ font-family:'Rainy Hearts',monospace !important;
+}
+.lace-btn,.side-links a,.entry,.mini-note,.status,.quote,.player,
+.guestbook input,.guestbook textarea,.player button{
+ background-image:none;
+}
+.masthead{background-image:linear-gradient(125deg,#f7e8e7 0%,#fffaf1 53%,#e7eee2 100%)}
+.entry,.quote,.player,.sidebar,.mini-note,.status{
+ background-color:#fffdf8;
+}
+.mini-note{background-color:#f1f4ec}
+.status{background-color:#f5f1e8}
+.quote{background-color:#f7efed}
+.player{background-color:#f6efed}
+.guestbook input,.guestbook textarea{background-color:#fffdfa}
+.lace-btn{background-color:#fffaf6}
 </style>
 </head>
 <body>
