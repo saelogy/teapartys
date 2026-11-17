@@ -251,6 +251,238 @@ h1{text-shadow:none}
   .site-shell{margin:12px 8px;padding:8px}
 }
 
+
+/* === solveir-inspired: handmade pastel web shrine / dollhouse UI === */
+:root{
+  --ink:#b47a50;
+  --rose:#efacba;
+  --rose-deep:#c39766;
+  --paper:#fffaf5;
+  --pink:#ffedf5;
+  --line:#f4c8d7;
+  --shadow:transparent;
+}
+html,body{
+  background-color:#fff2f5;
+  background-image:
+    linear-gradient(45deg,rgba(255,255,255,.72) 25%,transparent 25%,transparent 75%,rgba(255,255,255,.72) 75%),
+    linear-gradient(45deg,rgba(255,255,255,.72) 25%,transparent 25%,transparent 75%,rgba(255,255,255,.72) 75%);
+  background-position:0 0,7px 7px;
+  background-size:14px 14px;
+  color:var(--ink);
+  font-size:14px;
+  line-height:1.45;
+  letter-spacing:.35px;
+  image-rendering:pixelated;
+}
+a{color:#efacba;text-shadow:1px 1px #fff}
+a:hover{color:#c39766;text-decoration:none}
+.site-shell{
+  width:min(920px,calc(100% - 28px));
+  max-width:920px;
+  margin:54px auto 50px;
+  padding:16px;
+  position:relative;
+  background:#fff8f3;
+  border:7px solid transparent;
+  border-image:repeating-linear-gradient(45deg,#fff 0 5px,#f8dce6 5px 9px,#fff 9px 14px) 7;
+  outline:2px dashed #f2bfd0;
+  box-shadow:none;
+}
+.site-shell:before,.site-shell:after{
+  content:"";
+  position:fixed;
+  left:0;right:0;
+  height:23px;
+  z-index:20;
+  pointer-events:none;
+  background:
+    radial-gradient(ellipse at 50% 0%,#fff 0 8px,transparent 8.7px) 0 0/18px 22px repeat-x;
+  border-bottom:1px dashed #e7b6c7;
+}
+.site-shell:before{top:0}
+.site-shell:after{
+  top:auto;bottom:0;transform:rotate(180deg);
+}
+.masthead{
+  min-height:165px;
+  margin:0 0 13px;
+  border:7px solid transparent;
+  border-image:repeating-linear-gradient(45deg,#fff 0 5px,#f8dce6 5px 9px,#fff 9px 14px) 7;
+  background-color:#ffeef4;
+  background-image:
+    radial-gradient(circle,#fff 1.4px,transparent 1.8px),
+    linear-gradient(135deg,#ffe8f0,#fff7ee 55%,#f9e7df);
+  background-size:13px 13px,auto;
+  padding:23px 14px;
+}
+.masthead:before,.masthead:after{
+  color:#e6a9bc;
+  opacity:1;
+  letter-spacing:6px;
+  font-size:15px;
+}
+.eyebrow,.entry-date,.status,.pixel-label{
+  color:#c39766;
+  letter-spacing:1px;
+}
+h1{
+  color:#f3b7ca;
+  text-shadow:1px 1px #fff,2px 2px #d9a9b7;
+  font-size:clamp(26px,4vw,43px);
+}
+.subtitle{color:#c39766;letter-spacing:1px}
+.nav{
+  gap:8px;
+  margin-bottom:15px;
+}
+.nav:before{color:#e6a9bc;letter-spacing:7px}
+.lace-btn{
+  color:#c39766;
+  background-color:#fff7f8;
+  background-image:
+    linear-gradient(45deg,rgba(255,213,226,.55) 25%,transparent 25%,transparent 75%,rgba(255,213,226,.55) 75%),
+    linear-gradient(45deg,rgba(255,213,226,.55) 25%,transparent 25%,transparent 75%,rgba(255,213,226,.55) 75%);
+  background-position:0 0,5px 5px;
+  background-size:10px 10px;
+  border:2px dashed #efb8ca;
+  outline:2px solid #fff;
+  outline-offset:1px;
+  box-shadow:none;
+  border-radius:5px;
+  padding:6px 13px;
+  font-size:12px;
+  letter-spacing:.4px;
+}
+.lace-btn:hover{
+  color:#b47a50;
+  background-color:#ffeaf1;
+  transform:translateY(-1px);
+}
+.layout{
+  grid-template-columns:195px minmax(0,1fr);
+  gap:13px;
+}
+.sidebar,.panel{
+  background-color:#fffaf7;
+  background-image:linear-gradient(45deg,rgba(255,231,239,.35) 25%,transparent 25%,transparent 75%,rgba(255,231,239,.35) 75%);
+  background-size:12px 12px;
+  border:7px solid transparent;
+  border-image:repeating-linear-gradient(45deg,#fff 0 5px,#f6d7e1 5px 9px,#fff 9px 14px) 7;
+  outline:1px dashed #e8b9c8;
+  box-shadow:none;
+}
+.sidebar{padding:10px;gap:12px}
+.panel{
+  padding:14px;
+  margin-bottom:13px;
+  background-color:#fffdf9;
+  background-image:none;
+}
+.panel:after{color:#e7b4c5}
+.panel-title{
+  color:#d69caf;
+  border-bottom:2px dashed #f4cbd8;
+  font-size:20px;
+  text-shadow:1px 1px #fff;
+}
+.panel-title span{color:#c39766}
+.profile-art{
+  border:7px solid transparent;
+  border-image:repeating-linear-gradient(45deg,#fff 0 4px,#f6d7e1 4px 7px,#fff 7px 11px) 7;
+  outline:1px dashed #e7b4c5;
+  background-image:
+    radial-gradient(circle,#fff 2px,transparent 2.8px),
+    linear-gradient(145deg,#f9dce7,#fff2e8 55%,#f0e9df);
+  background-size:14px 14px,100% 100%;
+}
+.profile-art .moon{color:#fff;text-shadow:1px 1px #e6b5c3}
+.profile-name{color:#d69caf}
+.status{
+  background:#fff3f5;
+  border:2px dashed #efc5d2;
+  color:#bd967c;
+}
+.status b{color:#d69caf}
+.side-links a{
+  padding:7px 8px;
+  background:#fff3f6;
+  border:1px dashed #f0c6d3;
+  border-left:3px solid #efb7c9;
+  color:#c39766;
+}
+.side-links a:hover{background:#ffe8ef}
+.mini-note{
+  background-color:#fff4ed;
+  border:2px dashed #e9c4b0;
+  transform:rotate(-1deg);
+}
+.stamp{
+  border:1px dashed #d6a1b1;
+  color:#cf9aaa;
+}
+.entry{
+  background:#fff9f4;
+  border:2px dashed #efcbd4;
+  padding:10px;
+}
+.entry h3{color:#d69caf}
+.entry-date{color:#c39766}
+.two-col{gap:10px}
+.photo-grid{gap:11px}
+.polaroid{
+  background:#fff;
+  border:7px solid transparent;
+  border-image:repeating-linear-gradient(45deg,#fff 0 4px,#f7dce4 4px 7px,#fff 7px 11px) 7;
+  outline:1px dashed #e8bdca;
+  box-shadow:none;
+  padding:6px 6px 19px;
+}
+.photo{ text-shadow:1px 1px #c39766}
+.caption{color:#c39766}
+.player{
+  background:#fff2f5;
+  border:2px dashed #efc3d0;
+}
+.disc{
+  box-shadow:none;
+  border:2px dashed #fff;
+}
+.player button{
+  border:2px outset #f1cbd5;
+  background:#fff8f7;
+  color:#c39766;
+}
+.player button:active{border-style:inset}
+.quote{
+  background:#fff1f5;
+  border:2px dashed #efc3d0;
+  color:#c39766;
+}
+.tag{
+  background:#fff0f4;
+  border:1px dashed #e8b7c7;
+  color:#c39766;
+  border-radius:3px;
+}
+.guestbook input,.guestbook textarea{
+  background:#fffaf7;
+  border:2px inset #f0d1d9;
+}
+.guestbook button{border-radius:4px}
+.footer{color:#c39766}
+.footer .heart{color:#e6a2b8}
+.y2k-sticker{color:#d69caf;text-shadow:1px 1px #fff}
+.rain-heart{color:#e8a8bd;text-shadow:1px 1px #fff}
+@media(max-width:720px){
+  .site-shell{width:calc(100% - 20px);margin:35px auto 30px;padding:10px}
+  .layout{grid-template-columns:1fr}
+}
+@media(max-width:430px){
+  .site-shell{width:calc(100% - 14px);margin:30px auto 24px;padding:8px}
+  .sidebar{grid-template-columns:1fr}
+}
+
 </style>
 </head>
 <body>
